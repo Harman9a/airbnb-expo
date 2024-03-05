@@ -38,7 +38,6 @@ const Page = () => {
 
     try {
       const { createdSessionId, setActive } = await selectedAuth();
-      console.log("ok");
 
       if (createdSessionId) {
         setActive!({ session: createdSessionId });
@@ -88,7 +87,7 @@ const Page = () => {
 
         <TouchableOpacity
           style={styles.btnOutline}
-          onPress={() => Strategy.Apple}
+          onPress={() => onSelectAuth(Strategy.Apple)}
         >
           <Ionicons name="logo-apple" size={24} style={defaultStyles.btnIcon} />
           <Text style={styles.btnOutlineText}>Continue with Apple</Text>
@@ -96,7 +95,7 @@ const Page = () => {
 
         <TouchableOpacity
           style={styles.btnOutline}
-          onPress={() => Strategy.Google}
+          onPress={() => onSelectAuth(Strategy.Google)}
         >
           <Ionicons
             name="logo-google"
@@ -108,7 +107,7 @@ const Page = () => {
 
         <TouchableOpacity
           style={styles.btnOutline}
-          onPress={() => Strategy.Facebook}
+          onPress={() => onSelectAuth(Strategy.Facebook)}
         >
           <Ionicons
             name="logo-facebook"
